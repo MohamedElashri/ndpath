@@ -1,0 +1,9 @@
+# VScode and other IDEs
+.vscode
+
+# Python garbage
+*.egg-info
+
+# Misc
+*.log
+__pycache__
