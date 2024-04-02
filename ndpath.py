@@ -79,7 +79,7 @@ class Ndpath:
             self.save_env_file()
 
     def env_file(self):
-        return os.path.expanduser("~/.  .env")
+        return os.path.expanduser("~/.pathos.env")
 
     def quoted_paths(self):
         return [shlex.quote(path) for path in self.paths]
