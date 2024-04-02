@@ -23,7 +23,11 @@ To use ndpath, simply run the following command in your terminal:
 ndpath
 ```
 
-This will launch the interactive interface of ndpath.
+This will launch the interactive interface of ndpath that will allow you to view, add, remove, and reorder paths in your PATH. You should also source the `.pathos.env` file in your shell configuration file (e.g., `.bashrc`, `.zshrc`, etc.) to load the modified PATH into your shell environment.
+
+```bash
+source ~/.pathos.env
+```
 
 ## Features
 
