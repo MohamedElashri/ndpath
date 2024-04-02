@@ -1,3 +1,5 @@
+[![Python Tests](https://github.com/MohamedElashri/ndpath/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/MohamedElashri/ndpath/actions/workflows/tests.yml)
+
 # ndpath
 
 ndpath is a command-line tool for managing and editing the PATH environment variables. It provides an interactive interface to view, add, remove, and reorder directories in your PATH.
