@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="ndpath",
-    version="1.0.0",
+    version="0.0.1",
     py_modules=["ndpath"],
     include_package_data=True,
     install_requires=[

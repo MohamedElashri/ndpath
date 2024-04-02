@@ -3,7 +3,11 @@
 
 # Python garbage
 *.egg-info
+dist
 
 # Misc
 *.log
 __pycache__
+
+# test env
+testenv

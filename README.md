@@ -1,6 +1,6 @@
 # ndpath
 
-ndpath is a command-line tool for managing and editing the PATH environment variable. It provides an interactive interface to view, add, remove, and reorder directories in your PATH.
+ndpath is a command-line tool for managing and editing the PATH environment variables. It provides an interactive interface to view, add, remove, and reorder directories in your PATH.
 
 ## Introduction
 
