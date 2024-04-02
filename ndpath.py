@@ -1,6 +1,5 @@
 import os
 import shlex
-import subprocess
 from rich import print
 from rich.console import Console
 import readchar
@@ -14,7 +13,7 @@ class Ndpath:
         self.scroll_index = 0
         self.help = self.load_help_text()
         self.error = ""
-        
+
     def run(self):
         while True:
             self.clear_screen()
@@ -37,16 +36,16 @@ class Ndpath:
                         self.scroll_index = self.selected_index - terminal_height + 6
             elif key == readchar.key.PAGE_UP:
                 terminal_height, _ = os.get_terminal_size()
-                self.selected_index = max(
-                    0, self.selected_index - terminal_height + 5)
-                self.scroll_index = max(
-                    0, self.scroll_index - terminal_height + 5)
+                self.selected_index = max(0, self.selected_index - terminal_height + 5)
+                self.scroll_index = max(0, self.scroll_index - terminal_height + 5)
             elif key == readchar.key.PAGE_DOWN:
                 terminal_height, _ = os.get_terminal_size()
                 self.selected_index = min(
-                    len(self.paths) - 1, self.selected_index + terminal_height - 5)
+                    len(self.paths) - 1, self.selected_index + terminal_height - 5
+                )
                 self.scroll_index = min(
-                    len(self.paths) - terminal_height + 5, self.scroll_index + terminal_height - 5)
+                    len(self.paths) - terminal_height + 5, self.scroll_index + terminal_height - 5
+                )
             else:
                 self.handle_key_event(key)
 
@@ -65,7 +64,6 @@ class Ndpath:
     def init_paths(self):
         return self.paths_from_env() or self.paths_from_env_file()
 
-
     def handle_key_event(self, key):
         if key == "o":
             self.insert_path(False)
@@ -79,9 +77,9 @@ class Ndpath:
             self.remove_duplicate_paths()
         elif key == "S":
             self.save_env_file()
-        
+
     def env_file(self):
-        return os.path.expanduser("~/.pathos.env")
+        return os.path.expanduser("~/.  .env")
 
     def quoted_paths(self):
         return [shlex.quote(path) for path in self.paths]
@@ -93,7 +91,6 @@ class Ndpath:
         with open(self.env_file(), "w+") as file:
             file.write(self.export_text())
 
-
     def insert_path(self, above):
         path = input("Enter new path: ")
         if os.path.exists(path):
@@ -102,7 +99,7 @@ class Ndpath:
             self.selected_index = index
         else:
             self.error = f"pathos.py ERROR: {path} does not exist"
-        
+
     def remove_path(self):
         if self.paths:
             del self.paths[self.selected_index]
@@ -117,13 +114,11 @@ class Ndpath:
     def display_title(self):
         print("\n\n pathos - CLI for editing a PATH env variable\n\n")
 
-
     def clear_screen(self):
         print("\033[2J\033[H", end="")
         self.display_title()
         self.display_paths_menu()
-    
-    
+
     def default_colors(self):
         return {"color": "white", "background": "on black", "style": ""}
 
@@ -131,7 +126,6 @@ class Ndpath:
         if self.error:
             self.console.print(self.error, style="bold red")
             self.error = ""
-
 
     def display_paths_menu(self):
         terminal_height, _ = os.get_terminal_size()
@@ -141,9 +135,7 @@ class Ndpath:
             self.scroll_index = max(0, self.selected_index - half_height)
         elif self.selected_index >= self.scroll_index + terminal_height - 5 - half_height:
             self.scroll_index = self.selected_index - terminal_height + 6 + half_height
-
-        visible_paths = self.paths[self.scroll_index:
-                                self.scroll_index + terminal_height - 5]
+        visible_paths = self.paths[self.scroll_index : self.scroll_index + terminal_height - 5]
 
         for index, path in enumerate(visible_paths, start=self.scroll_index):
             style = ""
@@ -167,10 +159,9 @@ class Ndpath:
         # Move the cursor back to the selected path
         selected_index_on_screen = self.selected_index - self.scroll_index
         print(f"\033[{selected_index_on_screen + 1}A", end="")
-    
 
     def load_help_text(self):
-        return '''
+        return """
     Keyboard shortcuts:
     q - quit (will be prompted to save)
     k/↑ - move selection up
@@ -181,8 +172,8 @@ class Ndpath:
     X - delete all non-existent paths
     D - dedupe list of paths
     S - manually save
-    '''
-    
+    """
+
     def key_bindings(self, key):
         if key.lower() in ["q", "up", "k", "down", "j", "o", "x", "d", "s"]:
             return key.lower()

@@ -34,8 +34,8 @@ ndpath provides the following features:
 - Remove directories from your PATH
 - Reorder directories in your PATH
 - Save changes to your PATH permanently
-  
-## Keyboard Shortcuts  
+
+## Keyboard Shortcuts
 
 ndpath supports the following keyboard shortcuts:
 
