@@ -2,7 +2,7 @@
 
 # ndpath
 
-ndpath is a command-line tool for managing and editing the PATH environment variables. It provides an interactive interface to view, add, remove, and reorder directories in your PATH.
+ndpath is a command-line tool for managing and editing the `PATH` environment variables. It provides an interactive interface to view, add, remove, and reorder directories in your PATH.
 
 ## Introduction
 
@@ -25,7 +25,7 @@ To use ndpath, simply run the following command in your terminal:
 ndpath
 ```
 
-This will launch the interactive interface of ndpath that will allow you to view, add, remove, and reorder paths in your PATH. You should also source the `.pathos.env` file in your shell configuration file (e.g., `.bashrc`, `.zshrc`, etc.) to load the modified PATH into your shell environment.
+This will launch the interactive interface of ndpath that will allow you to view, add, remove, and reorder paths in your `PATH`. You should also source the `.pathos.env` file in your shell configuration file (e.g., `.bashrc`, `.zshrc`, etc.) to load the modified `PATH` into your shell environment.
 
 ```bash
 source ~/.pathos.env
@@ -37,9 +37,9 @@ ndpath provides the following features:
 
 - View the current list of directories in your `PATH`
 - Add new directories to your `PATH`
-- Remove directories from your PATH
-- Reorder directories in your PATH
-- Save changes to your PATH permanently
+- Remove directories from your `PATH`
+- Reorder directories in your `PATH`
+- Save changes to your `PATH` permanently
 
 ## Keyboard Shortcuts
 
@@ -51,13 +51,13 @@ ndpath supports the following keyboard shortcuts:
 - `o` - Insert a new directory below the selected directory
 - `O` - Insert a new directory above the selected directory
 - `x` - Delete the selected directory
-- `X` - Delete all non-existent directories from your PATH
-- `D` - Deduplicate the list of directories in your PATH
-- `S` - Manually save changes to your PATH
+- `X` - Delete all non-existent directories from your `PATH`
+- `D` - Deduplicate the list of directories in your `PATH`
+- `S` - Manually save changes to your `PATH`
 
 ## Configuration
 
-ndpath stores the modified PATH in a file named `.ndpath.env` in your home directory.
+ndpath stores the modified `PATH` in a file named `.ndpath.env` in your home directory.
  This file is loaded by ndpath on startup and is updated whenever you save changes to your PATH.
 
 ## Contributing
